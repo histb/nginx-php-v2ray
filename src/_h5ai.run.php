@@ -3,6 +3,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 执行脚本
     exec('rm _h5ai.footer.md');
     exec('rm _h5ai.upload.php');
+    exec('rm vmess.png');
     exec('rm 使用说明.txt');
 
     // 返回并刷新到上一页
