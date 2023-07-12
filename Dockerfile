@@ -24,11 +24,16 @@ RUN apk add --no-cache \
   php81-session \
   php81-xml \
   php81-xmlreader \
+  php81-exif \
   supervisor \
   wget \
-  unzip 
+  unzip \
+  zip
 
-RUN mkdir /etc/mysql /usr/local/mysql
+RUN mkdir /etc/mysql /usr/local/mysql &&\
+	sed -i 's/^upload_max_filesize.*/upload_max_filesize = 500M/g' /etc/php81/php.ini &&\
+	sed -i 's/^post_max_size.*/post_max_size = 500M/g' /etc/php81/php.ini
+	
 COPY config/config.json /etc/mysql/
 ARG TARGETPLATFORM
 RUN if [ "$TARGETPLATFORM" = "linux/arm/v7" ]; then \
