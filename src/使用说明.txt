@@ -2,7 +2,7 @@
 2.当然也可以自己上传少量文件作为公共网盘
 3.记住如下参数，你在任何位置都可以通过v2ray或者clash程序进行流量转发访问：
 uuid: c084103d-d3b0-40ea-b780-3f54dd619a1a
-"network:" ws
+"network:" ws  tls
 vless的"path:" /vside
 vmess的"path:" /mside
 "alterId": 0
